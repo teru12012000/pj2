@@ -1,0 +1,13 @@
+.cal_day{
+  text-align: center;
+}
+.cal{
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: top;
+}
+.cal_des{
+  margin: auto;
+}
+
