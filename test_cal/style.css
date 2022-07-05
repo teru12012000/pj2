@@ -9,11 +9,14 @@
   overflow-y: auto;
 }
 .cal_des{
-  margin: 10%;
+  margin: auto;
   border-collapse: collapse;
   table-layout: fixed;
 }
 tr,td{
   border: 1px solid #CCCCCC;
   padding: 5px 10px;
+}
+.button{
+  margin: auto;
 }
