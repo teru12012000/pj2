@@ -8,6 +8,8 @@ let $date=document.getElementsByClassName('a-cal');
 let $day=document.getElementsByClassName('cal_day');
 let $before_month=document.getElementById('before-month');
 let $after_month=document.getElementById('after-month');
+let $pop_up=document.getElementById('pop-up');
+let $close=document.getElementById('close');
 
 
 //各ドキュメントの長さ
@@ -48,8 +50,13 @@ const init=()=>{
 //日にちクリック時のイベント
 const clickEvent=(e)=>{
   e.preventDefault();
-  const text=prompt('イベントを入力してください');
-  for(i=0;i<table_length;i++){
+  //const text=prompt('イベントを入力してください');
+  if($pop_up.style.display === "block"){ 
+    $pop_up.style.display = "none";
+  }else{
+    $pop_up.style.display = "block";
+  }
+  /*for(i=0;i<table_length;i++){
     if($date[i].textContent==e.target.textContent){
       const body=`${text}<br>`
       if(text){
@@ -57,7 +64,7 @@ const clickEvent=(e)=>{
       }
       break;
     }
-  }
+  }*/
 }
 const clear_table=(firstday,sum_date)=>{
   for(i=0;i<firstday;i++){
@@ -108,7 +115,12 @@ init();
 for(i=0;i<date_length;i++){
   $date[i].addEventListener('click',(e)=>clickEvent(e));
 }
+const closeevent=()=>{
+  $pop_up.style.display='none';
+}
+
+
 //前の月のボタンをクリック
 $before_month.addEventListener('click',()=>bm());
 $after_month.addEventListener('click',()=>am());
-
+$close.addEventListener('click',()=>closeevent());

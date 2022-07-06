@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .cal_day{
   text-align: center;
 }
@@ -20,3 +21,39 @@ tr,td{
 .button{
   margin: auto;
 }
+#pop-up {
+  background: #FFF;
+  border: 1px solid #333;
+  box-shadow: 0 10px 10px #999;
+  display: none; 
+  font-family: serif;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+#pop-up > #close {
+  background-color: #EEE;
+  color: #333;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  top: 1px;
+  width: 30px;
+}
+
+#pop-up > #close:hover {
+  background-color: #F9F9F9;
+  color: #999;
+}
+
+
+
+
