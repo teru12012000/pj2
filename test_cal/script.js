@@ -1,7 +1,7 @@
 //日付の取得
 const date=new Date();
 
-//ドキュメントの取得
+//DOMの取得
 let $mon=document.getElementById('js-month');
 let $table=document.getElementsByClassName('text');
 let $date=document.getElementsByClassName('a-cal');
@@ -10,14 +10,25 @@ let $before_month=document.getElementById('before-month');
 let $after_month=document.getElementById('after-month');
 let $pop_up=document.getElementById('pop-up');
 let $close=document.getElementById('close');
+let $pop_h2=document.getElementById('date');
+let $btn=document.getElementById('js-btn');
+let $time=document.getElementById('js-time');
+let $place=document.getElementById('js-place');
+let $event=document.getElementById('js-textarea');
+
+
 
 
 //各ドキュメントの長さ
 const table_length=$table.length;
 const date_length=$date.length;
 
+//日時に関する変数
 let month=date.getMonth()+1;
 let year=date.getFullYear();
+
+//現時点の日にちの変数
+let point;
 const calcuate=(monthlen,firstday)=>{
   $mon.textContent=`${year}年　${month}月`;
   //曜日の色付け
@@ -38,6 +49,15 @@ const calcuate=(monthlen,firstday)=>{
     }
   }
 }
+
+const pop_up_open_or_close=()=>{
+  if($pop_up.style.display === "block"){ 
+    $pop_up.style.display = "none";
+  }else{
+    $pop_up.style.display = "block";
+  }
+}
+
 //初期化
 const init=()=>{
   const start=new Date(year,month-1,1);
@@ -51,21 +71,16 @@ const init=()=>{
 const clickEvent=(e)=>{
   e.preventDefault();
   //const text=prompt('イベントを入力してください');
-  if($pop_up.style.display === "block"){ 
-    $pop_up.style.display = "none";
-  }else{
-    $pop_up.style.display = "block";
-  }
-  /*for(i=0;i<table_length;i++){
+  pop_up_open_or_close();
+  $pop_h2.textContent=`${month}月${e.target.textContent}日の予定`;
+  for(i=0;i<table_length;i++){
     if($date[i].textContent==e.target.textContent){
-      const body=`${text}<br>`
-      if(text){
-        $table[i].insertAdjacentHTML('beforeend',body);
-      }
+      point=i;
       break;
     }
-  }*/
+  }
 }
+//月が変わったときのカレンダー表示の処理
 const clear_table=(firstday,sum_date)=>{
   for(i=0;i<firstday;i++){
     $date[i].textContent='';
@@ -115,12 +130,27 @@ init();
 for(i=0;i<date_length;i++){
   $date[i].addEventListener('click',(e)=>clickEvent(e));
 }
+//閉じるボタンが押されたときの処理
 const closeevent=()=>{
   $pop_up.style.display='none';
 }
-
+//登録ボタンクリック後の処理
+const addevent=()=>{
+  const text=$event.value;
+  console.log(text)
+  const body=`<li>${text}</li><br>`
+  if(text){
+      $table[point].insertAdjacentHTML('beforeend',body);
+  }
+  $event.value='';
+  $pop_up.style.display='none';
+}
 
 //前の月のボタンをクリック
 $before_month.addEventListener('click',()=>bm());
+//次の月のボタンをクリック
 $after_month.addEventListener('click',()=>am());
+//ポップアップの閉じるボタンをクリック
 $close.addEventListener('click',()=>closeevent());
+//登録ボタンをクリック
+$btn.addEventListener('click',()=>addevent());

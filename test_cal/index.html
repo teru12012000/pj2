@@ -83,10 +83,20 @@
     </tr>
   </table>
   <div id="pop-up">
-    <p id="close">✕
-      <h2>イベント入力</h2>
-      <textarea name="event" id="js-textarea" cols="30" rows="10"></textarea>
-    </p>
+    <div id="background"></div>
+    <div id="pop-up-show">
+      <div id="pop-up-content">
+        <p id="close">✕
+          <h2 id="date"></h2>
+          時刻:　<input type="text" name="time" id="js-time"><br><br>
+          場所:　<input type="text" name="time" id="js-place"><br><br>
+          内容:<br><textarea name="event" id="js-textarea" cols="30" rows="10"></textarea>
+        </p>
+        <button id="js-btn">登録</button>
+      </div>
+      
+    </div>
+    
   </div>
   <script src="./script.js"></script>
 </body>
