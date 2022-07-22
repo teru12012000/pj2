@@ -1,0 +1,52 @@
+.App {
+  padding: 5%;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  text-align: center;
+  background-color: black;
+}
+
+.inputText {
+  width: 90%;
+  height: 10%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: 100px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  margin-right: 10px;
+  background-color: orange;
+}
+
+.number1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: black;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.number2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  margin-right: 10px;
+  background-color: gray;
+}
+
+h1 {
+  color: white;
+}
