@@ -1,14 +1,22 @@
-import React,{useCallback} from 'react'
+import React,{useCallback, useState} from 'react'
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import jaLocale from '@fullcalendar/core/locales/ja';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { DateClickArg } from "@fullcalendar/interaction";
+import '../App.css'
+type eve={
+  title:string;
+  date:string;
+}
+
 
 function Calendar() {
+  const [event,setEvent]=useState<eve[]>([])
+
   const handleClick=useCallback((arg: DateClickArg) => {
-    alert(arg.dateStr);
+    //alert(arg.dateStr);
   }, []);
   return (
     <div>
