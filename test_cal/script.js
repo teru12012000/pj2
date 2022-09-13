@@ -126,6 +126,7 @@ const am=()=>{
 
 //初期化呼び出し
 init();
+
 //日にちをクリック
 for(i=0;i<date_length;i++){
   $date[i].addEventListener('click',(e)=>clickEvent(e));
