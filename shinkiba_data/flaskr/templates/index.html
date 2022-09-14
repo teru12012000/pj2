@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shinkiba</title>
+</head>
+<body>
+  <h1>新木場の競技場の予定</h1>
+  <table border="1">
+    <tr>
+      <td></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{date[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+    <tr>
+      <td class="date"></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{table1[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+    <tr>
+      <td class="date"></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{table2[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+    <tr>
+      <td class="date"></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{table3[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+    <tr>
+      <td class="date"></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{table4[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+    <tr>
+      <td class="date"></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{table5[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+    <tr>
+      <td class="date"></td>
+      {%for i in range(1,6,2)%}
+        <td>
+          {{table5[i].text}}
+        </td>
+      {%endfor%}
+    </tr>
+  </table>
+  <script src="../static/js/script.js"></script>
+</body>
+</html>
